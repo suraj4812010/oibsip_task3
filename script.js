@@ -5,6 +5,14 @@ function convertTemperature(temperature, unit) {
       return (temperature - 32) * 5 / 9;
     }
   }
+
+function printUnit(unit) {
+    if (unit === "c") {
+      return "Farhenheit";
+    } else {
+      return "Celcius";
+    }
+  }
   
   document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -14,4 +22,7 @@ function convertTemperature(temperature, unit) {
   
     var output = document.querySelector("#output");
     output.innerHTML = convertTemperature(temperature, unit);
+
+    var output = document.querySelector("#outputUnit");
+    output.innerHTML = printUnit(unit);
   });
